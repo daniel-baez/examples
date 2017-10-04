@@ -1,0 +1,21 @@
+apply plugin: 'java'
+apply plugin: 'application'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testCompile 'junit:junit:4.12'
+}
+
+// Define the main class for the application
+mainClassName = 'cl.daplay.primetable.Main'
+
+run {
+    if (project.hasProperty("n")) {
+        args n
+    } else {
+        args 10
+    }
+}
